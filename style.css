@@ -11,23 +11,16 @@ body {
     flex-direction: column;
     align-items: center;
 }
-
 #timer {
     margin: 5vh;
     font-size: 35px;
 }
-
 #cards {
     display: grid;
     width: 70%;
-    /* min-width: 550px; */
     gap: 2vw 2vh;
     grid-template-columns: auto auto auto auto auto;
 }
-
-
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-
 .flip-card {
     background-color: transparent;
     width: 100%;
@@ -35,13 +28,8 @@ body {
     margin: 0;
     padding: 0;
     perspective: 1000px;
-    /* Remove this if you don't want the 3D effect */
     transition: all 0.5s ease-in-out;
 }
-
-
-/* This container is needed to position the front and back side */
-
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -50,22 +38,9 @@ body {
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
-
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-
-
-/* .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-} */
-
 .flip {
     transform: rotateY(180deg);
 }
-
-
-/* Position the front and back side */
-
 .flip-card-front,
 .flip-card-back {
     position: absolute;
@@ -74,13 +49,8 @@ body {
     margin: 0;
     padding: 0;
     -webkit-backface-visibility: hidden;
-    /* Safari */
     backface-visibility: hidden;
 }
-
-
-/* Style the back side */
-
 .flip-card-back {
     color: white;
     transform: rotateY(180deg);
@@ -95,6 +65,17 @@ img {
     font-size: 35px;
     color: white;
 }
+#restart > button{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:white;
+    background-color: #82D2E4;
+    padding:1vh;
+    border: 1px solid white;
+    border-radius:10px;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px lightgray;
+    transition: all 1s ease-in-out;
+}
 
 @media(max-width: 700px) {
     #cards {
@@ -102,7 +83,6 @@ img {
         width: 100%;
         padding-right: 5%;
         padding-left: 5%;
-        /* min-width: 550px; */
         gap: 2vw 2vh;
         grid-template-columns: auto auto auto auto auto;
     }

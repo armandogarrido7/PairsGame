@@ -69,7 +69,6 @@ function clickOnCard(e) {
 }
 
 function checkCards() {
-    console.log(cards_actives);
     for (card of cards) {
         disableClickOnCard(card);
     }
@@ -126,7 +125,6 @@ window.onload = () => {
         e.stopPropagation();
     })
     for (card of cards) {
-        // card.addEventListener('dblclick', (e) => { alert("doble click en imagen"); })
         card.addEventListener('click', clickOnCard);
     }
 }
