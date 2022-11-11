@@ -46,13 +46,16 @@ function clickOnCard(e) {
         startClock();
     }
     card = document.getElementById(e.target.id);
-    cards_actives.push(card);
+    if (!(cards_actives.includes(card))){
+        cards_actives.push(card);
+    }
     disableClickOnCard(card.children[0].children[1].children[0]);
     showCard(card);
     if (cards_actives.length == 2) {
         for (card of cards) {
             disableClickOnCard(card);
         }
+        checkCards();
         setTimeout(() => {
             for (card of cards) {
                 enableClickOnCard(card);
@@ -61,7 +64,7 @@ function clickOnCard(e) {
                 card.children[0].children[1].children[0].removeEventListener('click', clickOnCard, false);
             }
         }, 750)
-        checkCards();
+        
     }
 }
 
