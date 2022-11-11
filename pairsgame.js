@@ -66,6 +66,7 @@ function clickOnCard(e) {
 }
 
 function checkCards() {
+    console.log(cards_actives);
     for (card of cards) {
         disableClickOnCard(card);
     }
@@ -86,6 +87,11 @@ function checkCards() {
                 }
                 win_div = document.getElementById('win');
                 win_div.innerHTML = "YOU WIN :D";
+                restart_div = document.getElementById('restart');
+                restart_btn = document.createElement('button');
+                restart_btn.innerHTML="Play Again"
+                restart_btn.onclick = () => {location.reload()};
+                restart_div.appendChild(restart_btn);
             }, 750)
         } else {
             setTimeout(() => {
@@ -112,8 +118,12 @@ window.onload = () => {
         card.children[0].src = "./img/" + cards_text[parseInt(card.children[0].id)] + "_card.png";
     }
     cards = document.getElementsByTagName('img');
+    document.addEventListener('dblclick',(e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+    })
     for (card of cards) {
+        // card.addEventListener('dblclick', (e) => { alert("doble click en imagen"); })
         card.addEventListener('click', clickOnCard);
-        card.addEventListener('dblclick', (e) => { e.preventDefault(); })
     }
 }
